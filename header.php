@@ -5,7 +5,7 @@
   overflow: hidden;
 }
 	 /* Style inputs with type="text", select elements and textareas */
-input[type=text], select, textarea {
+input[type=text], select, textarea,input[type=password] {
   width: 100%; /* Full width */
   padding: 12px; /* Some padding */ 
   border: 1px solid #ccc; /* Gray border */
@@ -98,9 +98,8 @@ body
   transition: opacity 0.6s;
   margin-bottom: 15px;
 }
-
-.alert.success {background-color: #4CAF50;}
-.alert.info {background-color: #2196F3;}
+	.alert.success {background-color: #4CAF50;}
+.alert.info {background-color: #FA3804;}
 .alert.warning {background-color: #ff9800;}
 
 .closebtn {
@@ -118,76 +117,14 @@ body
   color: black;
 }
 </style>
+
+
 </head>
 <body>
-
-
  <div class="topnav">
   <a  href="index.php">Home</a>
-  <a class="active" href="form.php">Form</a>
+  <a class="active" href="login.php">Login</a>
 </div> 
-	<?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST')
-{
-echo"<div class='alert success'><span class='closebtn'>&times;</span><strong>Success!</strong>  Hey Your Selected Country is ".$_POST['country']."
-</div>";
-}
-?>
- <div class="container">
-  <form action="form.php" method="post">
-
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
-
-    <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
-
-<label for="country">Country</label>
 <?php
-$sname = "remotemysql.com";
-$uname = "6tXSI3oKSy";
-$psw = "fDaIO6AzMP";
-
-try
-{
-		$conn = new PDO("mysql:host=$sname;dbname=$uname", $uname, $psw);
-    	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$stmt = $conn->prepare('SELECT Country_Name FROM Countries');
-		$stmt->execute();
-	    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-	   if ($stmt->rowCount() > 0) {
-    		 echo "<select id='country' name='country'>";
-    			foreach ($results as $row) { 
-					if ($row['Country_Name']!=null)
-     				echo "<option value=".$row['Country_Name'].">".$row['Country_Name']."</option>";
-				}
-	   }
-  echo "</select>";
-}
-catch(PDOException $ex) {
-    echo "Error is: " . $ex->getMessage();
-}
-$conn = null;
-
+	session_start();
 ?>
-
-    <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-
-    <input type="submit" value="Submit">
-
-  </form>
-</div> 
-<script>
-var close = document.getElementsByClassName("closebtn");
-var i;
-
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function(){
-    var div = this.parentElement;
-    div.style.opacity = "0";
-    setTimeout(function(){ div.style.display = "none"; }, 600);
-  }
-}
-</script>
-</body>
