@@ -15,15 +15,21 @@ if (!isset($_SESSION['auth'])) {
         <link rel="stylesheet" href="https://bootswatch.com/4/cosmo/bootstrap.css">
         <style>
             body>.container {
-                padding: 60px 15px 0;
+                padding: 130px 50px 50px 50px;
+				
             }
+			body 
+			{
+				background-color: #d5d8dc ;
+			}
+			
         </style>
     </head>
 
     <body>
 		<header>
             <!-- Fixed navbar -->
-            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top bg-primary">
                 <a class="navbar-brand" href="#">MAP 202</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -39,7 +45,7 @@ if (!isset($_SESSION['auth'])) {
                             </a>
                         </li>
 						 <li class="nav-item">
-                            <a class="nav-link" href="/insert">Add Course
+                            <a class="nav-link" href="/insert">New Course
                             </a>
                         </li>
 						<!--<li class="nav-item">

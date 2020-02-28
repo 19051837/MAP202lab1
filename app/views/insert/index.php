@@ -3,34 +3,33 @@
     <div class="page-header" id="banner">
         <div class="row">
             <div class="col-lg-12">
-                <h1>Add new course</h1>
+                <h1>Please Add the details of New Course</h1>
 
-                <!--<p class="lead"><a href="/login/register"> Sign up here </a></p>-->
             </div>
         </div>
     </div>
 	
 <div class="row">
     <div class="col-sm-auto">
-		<form action="insert/save" method="post" >
+		<form action="insert/insertCourse" method="post" >
 		<fieldset>
 			<div class="form-group">
-				<label for="name">Department Name</label>
-				<input required type="text" class="form-control" name="department" id="department">
+				<label for="name">Enter the Department Name</label>
+				<input required type="text" class="form-control" name="department" id="department" required>
 			</div>
 			<div class="form-group">
-				<label for="name">Program Name</label>
-				<input required type="text" class="form-control" name="program" id="program">
+				<label for="name">Enter the Program Name</label>
+				<input required type="text" class="form-control" name="program" id="program" required>
 			</div>
 			<div class="form-group">
-				<label for="name">Course ID</label>
-				<input required type="text" class="form-control" name="courseid" id="courseid">
+				<label for="name">Enter the Course ID</label>
+				<input required type="text" class="form-control" name="courseid" id="courseid" required>
 			</div>
 			<div class="form-group">
-				<label for="name">Course Name</label>
-				<input required type="text" class="form-control" name="coursename" id="coursename" >
+				<label for="name">Enter the Course Name</label>
+				<input required type="text" class="form-control" name="coursename" id="coursename" required>
 			</div>
-		  <button type="submit" class="btn btn-primary">Save</button>
+		  <button type="submit" style="background-color:  #ba4a00" class="btn btn-primary">Add</button>
 		</fieldset>
 		</form> 
 	</div>

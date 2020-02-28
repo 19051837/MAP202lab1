@@ -11,7 +11,7 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <p> <a href='home/secret'> Want to see a secret page?</a>
+            <p> <a style="color:  #ba4a00" href='home/secret'> Want to see a secret page?</a>
 			</p>
         </div>
     </div>
