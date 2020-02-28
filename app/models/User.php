@@ -15,10 +15,10 @@ class User {
          * if username and password good then
          * $this->auth = true;
          */
-		 
+		 try{
 		$db = db_connect();
         $statement = $db->prepare("select * from users
-                                WHERE username = :name;
+                                WHERE name = :name;
                 ");
         $statement->bindValue(':name', $username);
         $statement->execute();
@@ -38,6 +38,12 @@ class User {
 			header('Location: /login');
 			die;
 		}
+		 }
+		catch (PDOException $e) {
+		echo "Error!: " . $e->getMessage() . "<br/>";
+ 		die();
+ 	}
+	
     }
 	
 	public function register ($username, $password) {

@@ -5,6 +5,7 @@ if (!isset($_SESSION['auth'])) {
 ?>
 
 <!DOCTYPE html>
+
 <html lang="en">
 	<head>
         <meta charset="UTF-8">
@@ -31,6 +32,14 @@ if (!isset($_SESSION['auth'])) {
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="/">Home
+                            </a>
+                        </li>
+						  <li class="nav-item">
+                            <a class="nav-link" href="/courses">Courses
+                            </a>
+                        </li>
+						 <li class="nav-item">
+                            <a class="nav-link" href="/insert">Add Course
                             </a>
                         </li>
 						<!--<li class="nav-item">
