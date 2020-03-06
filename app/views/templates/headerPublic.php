@@ -16,7 +16,9 @@ if (isset($_SESSION['auth']) == 1) {
         <style>
             body>.container {
                 padding: 60px 15px 0;
+				
             }
+			
         </style>
     </head>
 <body>

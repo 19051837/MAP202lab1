@@ -36,6 +36,12 @@
 		  <button type="submit" class="btn btn-primary">Login</button>
 		</fieldset>
 		</form> 
+		<div class="form-group">
+				<label for="name">Click here for Sign Up</label>
+				<a href="/login/signUp">
+					Sign Up
+					</a>
+			</div>
 	</div>
 </div>
     <?php require_once 'app/views/templates/footer.php' ?>
